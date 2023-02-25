@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class spawn : MonoBehaviour
 {
-    public GameObject bee;
-    public GameObject cat;
+    public GameObject[] mobs;
 
     // Start is called before the first frame update
     void Start()
@@ -18,12 +17,9 @@ public class spawn : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            Instantiate(bee, transform.position, Quaternion.identity);
-        }
+            int rand = Random.Range(0, mobs.Length);
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Instantiate(cat, transform.position, Quaternion.identity);
+            Instantiate(mobs[rand], transform.position, Quaternion.identity);
         }
     }
 }
