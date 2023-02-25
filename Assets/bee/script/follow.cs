@@ -5,17 +5,21 @@ using UnityEngine;
 public class follow : MonoBehaviour
 {
     public float speed;
-    public GameObject player;
+    
+
+    public Transform Player;
 
     // Start is called before the first frame update
     void Start()
     {
-        transform.Rotate(180, 0, 0);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        transform.LookAt(Player);
+
+        transform.position += transform.forward * speed * Time.deltaTime;
     }
 }
