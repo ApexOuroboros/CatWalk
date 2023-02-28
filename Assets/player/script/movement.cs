@@ -7,6 +7,7 @@ using UnityEngine;
 public class movement : MonoBehaviour
 {
     CharacterController characterController;
+    [SerializeField] Transform ResetPoint;
 
     public float speed = 6.0f;
     public float jSpeed = 8.0f;
@@ -38,4 +39,12 @@ public class movement : MonoBehaviour
 
         characterController.Move(mDir * Time.deltaTime);
     }
+
+    public void ResetPlayer()
+    {
+        characterController.enabled = false;
+        characterController.transform.position = ResetPoint.transform.position;
+        characterController.enabled = true;
+    }
+
 }
