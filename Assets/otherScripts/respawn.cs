@@ -10,6 +10,5 @@ public class respawn : MonoBehaviour
         {
             other.SendMessageUpwards("ResetPlayer");
         }
-        
     }
 }
