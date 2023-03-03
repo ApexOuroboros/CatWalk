@@ -46,5 +46,4 @@ public class movement : MonoBehaviour
         characterController.transform.position = ResetPoint.transform.position;
         characterController.enabled = true;
     }
-
 }
